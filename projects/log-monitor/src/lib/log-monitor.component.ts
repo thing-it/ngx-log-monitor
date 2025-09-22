@@ -16,6 +16,7 @@ import {Observable, Subscription} from 'rxjs';
   selector: 'log-monitor',
   templateUrl: './log-monitor.component.html',
   styleUrls: ['./log-monitor.component.scss'],
+  standalone: false,
 })
 export class LogMonitorComponent implements OnChanges, AfterViewInit, OnDestroy {
 
