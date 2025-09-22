@@ -10,13 +10,14 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ngx-log-monitor",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,6 +34,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -135,7 +142,8 @@
           "configurations": {
             "production": {
               "project": "projects/log-monitor/ng-package.prod.json"
-            }
+            ,              "tsConfig": "projects/log-monitor/tsconfig.lib.prod.json"
+}
           }
         },
         "test": {
