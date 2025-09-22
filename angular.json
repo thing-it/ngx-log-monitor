@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-log-monitor:build"
+            "buildTarget": "ngx-log-monitor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-log-monitor:build:production"
+              "buildTarget": "ngx-log-monitor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-log-monitor:build"
+            "buildTarget": "ngx-log-monitor:build"
           }
         },
         "test": {
